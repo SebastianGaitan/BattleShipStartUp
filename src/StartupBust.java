@@ -8,15 +8,9 @@ public class StartupBust
 	private ArrayList <StartUp> startups = new ArrayList <StartUp> ( );
 	private int numOfGuesses = 0;
 
-	public static void main ( String[] args )
-	{
-		StartupBust game = new StartupBust ( );
-		game.SetUpGame ( );
-		game.StartPlaying ( );
-	}
 
 	// Make three startup objects, give them names, and add them to the startups ArrayList
-	private void SetUpGame ( )
+	protected void SetUpGame ( )
 	{
 		StartUp one = new StartUp ( );
 		one.setName ("Google");
@@ -40,7 +34,7 @@ public class StartupBust
 		}
 	}
 
-	private void StartPlaying ( )
+	protected void StartPlaying ( )
 	{
 		while ( ! startups.isEmpty ( ) ) {
 			String userGuess = helper.GetUserInput ("Enter a guess");
