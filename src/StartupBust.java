@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 public class StartupBust
 {
+	//Declare and initialize variables
 	private GameHelper helper = new GameHelper ( );
 	private ArrayList <StartUp> startups = new ArrayList <StartUp> ( );
 	private int numOfGuesses = 0;
@@ -14,6 +15,7 @@ public class StartupBust
 		game.StartPlaying ( );
 	}
 
+	// Make three startup objects, give them names, and add them to the startups ArrayList
 	private void SetUpGame ( )
 	{
 		StartUp one = new StartUp ( );
@@ -25,11 +27,15 @@ public class StartupBust
 		startups.add (one);
 		startups.add (two);
 		startups.add (three);
+		// Print brief instructions for the user
 		System.out.println ("Your goal is to sink three startups");
 		System.out.println ("Google, Facebook, Twitter");
 		System.out.println ("Try to sink them all in the fewest number of guesses");
+		// For each startup in the startups ArrayList, place the startup on the grid
 		for ( StartUp startup : startups ) {
+			//Ask the Helper for a startup location (an ArrayList of Strings)
 			ArrayList <String> newLocation = helper.placeStartup (3);
+			//Call the setLocationCells() method on this startup to give it the location you just got from the helper
 			startup.setLocationCells (newLocation);
 		}
 	}

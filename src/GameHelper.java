@@ -12,7 +12,7 @@ public class GameHelper
 	private static final int GRID_SIZE = 49;
 	private static final int MAX_ATTEMPTS = 200;
 	private final Random random = new Random ( );
-	private int[] grid = new int[GRID_SIZE];
+	private final int[] grid = new int[GRID_SIZE];
 	private int startupCount = 0;
 
 	public String GetUserInput ( String prompt )
